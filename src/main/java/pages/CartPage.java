@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ public class CartPage extends BasePage {
     @FindBy(how = How.CSS, using = ".shopping_cart_link")
     private WebElement cartFooterField;
 
+    @Step("Check openid cart")
     public boolean isCartFooterDisplayed() {
         return cartFooterField.isDisplayed();
     }

@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,26 +31,31 @@ public class ProductsPage extends BasePage {
         URL = URL + "/inventory.html";
     }
 
+    @Step("Open cart page")
     public CartPage cartButtonClick() {
         cartLinkButton.click();
         return new CartPage(driver);
     }
 
+    @Step("click add item to add to cart")
     public ProductsPage addToCartSauceLabsBackpackClick() {
         addToCartSauceLabsBackpackButton.click();
         return this;
     }
 
+    @Step("get count items to cart")
     public int getCountItem() {
         String value = shoppingCartBadgeField.getText();
         return Integer.parseInt(value);
     }
 
+    @Step("click button to add items from cart")
     public ProductsPage addToCartSauceLabsBikeLightClick() {
         addToCartSauceLabsBikeLightButton.click();
         return this;
     }
 
+    @Step("click button to delete items from cart")
     public ProductsPage removeSauceLabsBackpackButtonClick() {
         removeSauceLabsBackpackButton.click();
         return this;
